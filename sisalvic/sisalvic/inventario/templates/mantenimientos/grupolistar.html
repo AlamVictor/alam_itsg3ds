@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{%block contenidohj%}
+<h1>LISTADOS DE GRUPOS </h1>
+
+<div class="form-group">
+
+<a class="btn btn-outline-primary" href="{% url 'grupoguardar'  %}" role="button">Nuevo</a>
+<a class="btn btn-outline-secondary" href="{% url 'grupospdf' %}" role="button">Imprimir</a>
+
+</div>
+
+
+    <TABLE class="table table-bordered border-primary>">
+	<TR>
+		<TH><center>ID</center></TH>
+		<TH><center>GRUPO</center></TH>
+		<TH><center>Activo / Anulado</center></TH>
+
+	</TR>
+		{% for presenta in object_list %}
+	<TR>
+		<TD><center>{{ presenta.id }}</center></TD>
+		<TD>{{ presenta.gruponombre}}</TD>
+		<TD><center>{{ presenta.grupoanulado}}</center></TD>
+
+		<td><a href="{% url 'grupomodificar' presenta.id  %}" button type="button" class="btn btn-outline-success">Modificar</a></td>
+		<td><a href="{% url 'grupoindividual' presenta.id  %}" button type="button" class="btn btn-outline-secondary">Imprimir</a></td>
+
+
+	</TR>
+
+     {% endfor %}
+
+
+</TABLE>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{%block contenidohj%}
+<h1>LISTADO DE CLIENTES </h1>
+
+<div class="form-group">
+<a class="btn btn-outline-primary" href="{% url 'clienteguardar'  %}" role="button">Nuevo</a>
+<a class="btn btn-outline-secondary" href="{% url 'clientespdf' %}" role="button">Imprimir</a>
+</div>
+
+    <TABLE class="table table-bordered border-primary">
+	<TR>
+		<TH><center>Id</center></TH>
+		<TH><center>Cédula</center></TH>
+		<TH><center>Apellidos y Nombres</center></TH>
+		<TH><center>Teléfono</center></TH>
+
+		<TH><center>Activo / Anulado</center></TH>
+<TH></TH>
+		<TH></TH>
+
+	</TR>
+		{% for presenta in object_list %}
+	<TR>
+		<TD><center>{{ presenta.id }}</center></TD>
+		<TD><center>{{ presenta.clientecedula}}</center></TD>
+		<TD>{{ presenta.clientenombre}}</TD>
+        <TD><center>{{ presenta.clientetelefono}}</center></TD>
+        <TD><center>{{ presenta.clienteanulado}}</center></TD>
+
+		<td><a href="{% url 'clientemodificar' presenta.id  %}" button type="button" class="btn btn-outline-success">Modificar</a></td>
+		<td><a href="{% url 'clienteimprimir' presenta.id  %}" button type="button" class="btn btn-outline-secondary">Imprimir</a></td>
+
+	</TR>
+     {% endfor %}
+
+
+</TABLE>
+
+
+{% endblock %}

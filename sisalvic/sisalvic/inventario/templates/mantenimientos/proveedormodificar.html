@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%block contenidohj%}
+
+<h1> MODIFICAR PROVEEDOR </h1>
+
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+
+    <div>
+        <button type="submit" class="btn btn-success">GUARDAR</button>
+        <a class="btn btn-danger" href="{% url 'proveedorlistar'  %}" role="button">CANCELAR</a>
+
+    </div>
+
+</form>
+
+
+{% endblock %}

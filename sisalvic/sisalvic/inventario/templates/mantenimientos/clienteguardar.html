@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%block contenidohj%}
+<center>
+    <h1> REGISTRAR CLIENTE </h1>
+
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <div>
+            <button type="submit" class="btn btn-success">GUARDAR</button>
+            <a class="btn btn-danger" href="{% url 'clientelistar'  %}" role="button">CANCELAR</a>
+
+        </div>
+    </form>
+
+</center>
+{% endblock %}

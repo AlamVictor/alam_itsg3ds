@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{%block contenidohj%}
+<h1> LISTADO DE PROVEEDORES </h1>
+
+<div class="form-group">
+
+<a class="btn btn-outline-primary" href="{% url 'proveedorguardar'  %}" role="button">Nuevo</a>
+<a class="btn btn-outline-secondary" href="{% url 'proveedorpdf' %}" role="button">Imprimir</a>
+
+</div>
+
+    <TABLE class="table table-bordered border-primary">
+	<TR>
+		<TH>Id</TH>
+		<TH>Cédula</TH>
+		<TH>Apellidos y Nombres</TH>
+		<TH>Telefono</TH>
+
+		<TH>Activo / Anulado</TH>
+<TH></TH>
+		<TH></TH>
+
+	</TR></center>
+		{% for presenta in object_list %}
+	<TR>
+		<TD>{{ presenta.id }}</TD>
+		<TD>{{ presenta.proveedorcedula}}</TD>
+		<TD>{{ presenta.proveedornombre}}</TD>
+        <TD>{{ presenta.proveedortelefono}}</TD>
+        <TD><center>{{ presenta.proveedoranulado}}</center></TD>
+
+		<td><a href="{% url 'proveedormodificar' presenta.id  %}" button type="button" class="btn btn-outline-success">Modificar</a></td>
+		<td><a href="{% url 'proveedorimprimir' presenta.id  %}" button type="button" class="btn btn-outline-secondary">Imprimir</a></td>
+	</TR>
+     {% endfor %}
+
+
+</TABLE>
+
+
+{% endblock %}

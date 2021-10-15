@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<center>
+    <header>
+        <meta charset="UTF-8">
+        <h1></h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:299,400,600,700,800&display=swap"
+              rel="stylesheet">
+        <h1>SISTEMA DE INVENTARIOS ALVIC</h1>
+        <title>
+            {% block titulohj%} {% endblock %}
+
+        </title>
+        {% load static %}
+
+        <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'core/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/solid.css' %}">
+
+
+        <style>
+ul {
+  list-style-type: none;  margin: 10;
+  padding: 10;  overflow: hidden;
+  background-color: #1c7a5b;
+}
+li {
+  float:left;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 14px 16px;
+  hover : background-color:#dddd;
+
+}
+
+
+
+        </style>
+
+        {% load static %}
+
+        <div class="container">
+            <!-- Logo Nombre y Menu -->
+            <div class="nav row rounded-top align-items-stretch justify-content-between"
+                 style="background-color:#1c7a5b">
+                <!-- Nombre de usuario -->
+                <div class="col-sm-9 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <a class="text-white">ALAM VICTOR TOLEDO ZAMBRANO ***TECNÓLOGO***</a>
+                </div>
+
+                <!-- Menu de navegación -->
+                <div>
+
+                    <nav class="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap">
+
+                        <ul id=”button” >
+
+                            <li><a href="{% url 'inicio' %}" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-home" style="font-size:43px"></i></CENTER>
+                                    <span>INICIO</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href="{% url 'grupolistar' %}" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-boxes" style="font-size:43px"></i></CENTER>
+                                    <span>GRUPO</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href="{% url 'productolistar' %}" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-box-open" style="font-size:43px"></i></CENTER>
+                                    <span>PRODUCTO</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href="{% url 'proveedorlistar' %}" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-user-tie" style="font-size:43px"></i></CENTER>
+                                    <span>PROVEEDOR</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href="{% url 'clientelistar' %}" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-handshake " style="font-size:43px"></i></CENTER>
+                                    <span>CLIENTE</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href="" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-shopping-cart" style="font-size:43px"></i></CENTER>
+                                    <span>COMPRA</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href=""  class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-toolbox" style="font-size:43px"></i></CENTER>
+                                    <span>VENTAS</span>
+                                </div>
+                            </a></li>
+
+                            <li><a href="{% url 'logout' %}" class="c-3 d-flex align-items-center">
+                                <div class="d-flex flex-column text-center">
+                                    <CENTER><i class="fas fa-sign-out-alt" style="font-size:43px"></i></CENTER>
+                                    <span>CERRAR SESION </span>
+                                </div>
+                            </a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block contenidohj %} {% endblock %}
+</center>
+
+<script src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'core/js/popper.min.js' %}"></script>
+<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'core/js/fontawesome.js' %}"></script>
+<script src="{% static 'core/js/scripts.js' %}"></script>
+<script src="{% static 'core/js/solid.js' %}"></script>
+
+
+<body style="background-color:#c9dbbd;">
+<!--Piede pagina -->
+
+
+</body>
+
+</footer>
+</html>
